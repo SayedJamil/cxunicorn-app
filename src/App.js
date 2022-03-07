@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { useEffect, useState } from 'react';
+import './App.css';
+import VideoComponent from './components/videocomponent';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import VideoFullPage from './components/VideoFullPage';
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/fullvideo" element={<VideoFullPage />} />
+      </Routes>
     </div>
   );
 }
